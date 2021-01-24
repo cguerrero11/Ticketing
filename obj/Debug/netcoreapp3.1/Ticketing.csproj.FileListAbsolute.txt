@@ -1,0 +1,13 @@
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\bin\Debug\netcoreapp3.1\Ticketing.exe
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\bin\Debug\netcoreapp3.1\Ticketing.deps.json
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\bin\Debug\netcoreapp3.1\Ticketing.runtimeconfig.json
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\bin\Debug\netcoreapp3.1\Ticketing.runtimeconfig.dev.json
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\bin\Debug\netcoreapp3.1\Ticketing.dll
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\bin\Debug\netcoreapp3.1\Ticketing.pdb
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.csprojAssemblyReference.cache
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.AssemblyInfoInputs.cache
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.AssemblyInfo.cs
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.csproj.CoreCompileInputs.cache
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.dll
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.pdb
+C:\Users\coolc\Desktop\coding stuff\Advanced web\Ticketing\obj\Debug\netcoreapp3.1\Ticketing.genruntimeconfig.cache
