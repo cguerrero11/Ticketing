@@ -2,14 +2,14 @@ using System;
 
 namespace Ticketing
 {
-    class Ticket
+    public class Ticket
     {
-        string id {get; set;}
-        string summary {get; set;}
-        string status {get; set;}
-        string priority {get; set;}
-        string submitter {get; set;}
-        string assigned {get; set;}
-        string watchers {get; set;}
+        public string id {get; set;}
+        public string summary {get; set;}
+        public string status {get; set;}
+        public string priority {get; set;}
+        public string submitter {get; set;}
+        public string assigned {get; set;}
+        public string watchers {get; set;}
     }
 }

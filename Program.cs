@@ -36,23 +36,24 @@ namespace Ticketing
                 {
                     // create file from data
                     StreamWriter sw = new StreamWriter(file, true);
+                    Ticket ticket = new Ticket();
                     Console.WriteLine("Enter Ticket ID.");
-                    // id = Console.ReadLine();
+                    ticket.id = Console.ReadLine();
                     Console.WriteLine("Enter summary.");
-                    // summary = Console.ReadLine();
+                    ticket.summary = Console.ReadLine();
                     Console.WriteLine("Enter status.");
-                    // status = Console.ReadLine();
+                    ticket.status = Console.ReadLine();
                     Console.WriteLine("Enter priority.");
-                    // priority = Console.ReadLine();
+                    ticket.priority = Console.ReadLine();
                     Console.WriteLine("Enter name of submitter");
-                    // submitter = Console.ReadLine();
+                    ticket.submitter = Console.ReadLine();
                     Console.WriteLine("Enter names of assigned people.");
-                    // assigned = Console.ReadLine();
+                    ticket.assigned = Console.ReadLine();
                     Console.WriteLine("Enter watchers.");
-                    // watchers = Console.ReadLine();
+                    ticket.watchers = Console.ReadLine();
 
-                    // sw.WriteLine(id + "," + summary + "," + status + "," + priority + "," 
-                    // + submitter + "," + assigned + "," + watchers + "\n");
+                    sw.WriteLine(ticket.id + "," + ticket.summary + "," + ticket.status + "," + ticket.priority + "," 
+                    + ticket.submitter + "," + ticket.assigned + "," + ticket.watchers + "\n");
 
 
                     sw.Close();
