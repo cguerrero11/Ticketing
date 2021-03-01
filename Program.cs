@@ -36,33 +36,27 @@ namespace Ticketing
                 {
                     // create file from data
                     StreamWriter sw = new StreamWriter(file, true);
-                    string id;
-                    string summary;
-                    string status;
-                    string priority;
-                    string submitter;
-                    string assigned;
-                    string watchers;
                     Console.WriteLine("Enter Ticket ID.");
-                    id = Console.ReadLine();
+                    // id = Console.ReadLine();
                     Console.WriteLine("Enter summary.");
-                    summary = Console.ReadLine();
+                    // summary = Console.ReadLine();
                     Console.WriteLine("Enter status.");
-                    status = Console.ReadLine();
+                    // status = Console.ReadLine();
                     Console.WriteLine("Enter priority.");
-                    priority = Console.ReadLine();
+                    // priority = Console.ReadLine();
                     Console.WriteLine("Enter name of submitter");
-                    submitter = Console.ReadLine();
+                    // submitter = Console.ReadLine();
                     Console.WriteLine("Enter names of assigned people.");
-                    assigned = Console.ReadLine();
+                    // assigned = Console.ReadLine();
                     Console.WriteLine("Enter watchers.");
-                    watchers = Console.ReadLine();
+                    // watchers = Console.ReadLine();
 
-                    sw.WriteLine(id + "," + summary + "," + status + "," + priority + "," 
-                    + submitter + "," + assigned + "," + watchers + "\n");
+                    // sw.WriteLine(id + "," + summary + "," + status + "," + priority + "," 
+                    // + submitter + "," + assigned + "," + watchers + "\n");
 
 
                     sw.Close();
+                    Console.WriteLine();
                 }
             } while (choice == "1" || choice == "2");
         }
