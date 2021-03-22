@@ -36,7 +36,7 @@ namespace Ticketing
                 {
                     // create file from data
                     StreamWriter sw = new StreamWriter(file, true);
-                    Ticket ticket = new Ticket();
+                    Ticket ticket = new Enhancement();
                     Console.WriteLine("Enter Ticket ID.");
                     ticket.id = Console.ReadLine();
                     Console.WriteLine("Enter summary.");
@@ -48,12 +48,40 @@ namespace Ticketing
                     Console.WriteLine("Enter name of submitter");
                     ticket.submitter = Console.ReadLine();
                     Console.WriteLine("Enter names of assigned people.");
-                    ticket.assigned = Console.ReadLine();
+                    string input;
+                        do
+                        {
+                            Console.WriteLine("Enter genre (or done to quit)");
+                            input = Console.ReadLine();
+                            if (input != "done" && input.Length > 0)
+                            {
+                                ticket.assigned.Add(input);
+                            }
+                        } while (input != "done");
+                        if (ticket.assigned.Count == 0)
+                        {
+                            ticket.assigned.Add("(no one assigned)");
+                        }
                     Console.WriteLine("Enter watchers.");
-                    ticket.watchers = Console.ReadLine();
+                    do
+                        {
+                            Console.WriteLine("Enter genre (or done to quit)");
+                            input = Console.ReadLine();
+                            if (input != "done" && input.Length > 0)
+                            {
+                                ticket.watchers.Add(input);
+                            }
+                        } while (input != "done");
+                        if (ticket.watchers.Count == 0)
+                        {
+                            ticket.watchers.Add("(no genres listed)");
+                        }
+
+                        string assigned = String.Join("|", ticket.assigned);
+                        string watchers = String.Join("|", ticket.watchers);
 
                     sw.WriteLine(ticket.id + "," + ticket.summary + "," + ticket.status + "," + ticket.priority + "," 
-                    + ticket.submitter + "," + ticket.assigned + "," + ticket.watchers + "\n");
+                    + ticket.submitter + "," + assigned + "," + watchers + "\n");
 
 
                     sw.Close();
@@ -61,5 +89,19 @@ namespace Ticketing
                 }
             } while (choice == "1" || choice == "2");
         }
+        public void getTicketInfo(){
+
+        
+        }
+        public void getTaskInfo(){
+            
+        
+        }
+        public void getEnhancementInfo(){
+            
+        
+        }
     }
+
+    
 }
