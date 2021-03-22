@@ -1,4 +1,4 @@
-TicketID, Summary, Status, Priority, Submitter, Assigned, Watching
-1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones
-2,Another ticket,Open,Low,Christopher,Christopher,Jeff
-3,Test,Open,High,Chris,Chris,Chris
+TicketID, Summary, Status, Priority, Submitter, Assigned, Watching, Severity
+1,This is a bug ticket,Open,High,Drew Kjell,Jane Doe,Drew Kjell|John Smith|Bill Jones,Low
+2,Another ticket,Open,Low,Christopher,Christopher,Jeff,High
+3,Test,Open,High,Chris,Chris,Chris,High
