@@ -87,15 +87,18 @@ namespace Ticketing
                         }
 
                         if(choice == "2"){
-                            getTicketInfo(ticket, file);
+                            BugDefect bug = (BugDefect)ticket;
+                            getTicketInfo(bug, file);
                         } 
                         else if (choice == "4"){
                             file = "Enhancements.csv";
-                            getEnhancementInfo(ticket, "file");
+                            Enhancement enhancement = (Enhancement)ticket;
+                            getEnhancementInfo(enhancement, "file");
                         }
                         else if (choice == "6"){
                             file = "Task.csv";
-                            getTaskInfo(ticket, file);
+                            Task task = (Task)ticket;
+                            getTaskInfo(task, file);
                         }
 
                     // sw.WriteLine(ticket.id + "," + ticket.summary + "," + ticket.status + "," + ticket.priority + "," 
@@ -107,7 +110,7 @@ namespace Ticketing
                 }
             } while (choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5" || choice == "6");
         }
-        public void getTicketInfo(BugDefect ticket, string file){
+        public static void getTicketInfo(BugDefect ticket, string file){
             StreamWriter sw = new StreamWriter(file, true);
             Console.WriteLine("Enter severity");
             ticket.severity = Console.ReadLine();
@@ -120,7 +123,7 @@ namespace Ticketing
             sw.Close();
             Console.WriteLine("Successfully added.");
         }
-        public void getTaskInfo(Task ticket, string file){
+        public static void getTaskInfo(Task ticket, string file){
             StreamWriter sw = new StreamWriter(file, true);
             Console.WriteLine("Enter name of project");
             ticket.submitter = Console.ReadLine();
@@ -135,7 +138,7 @@ namespace Ticketing
             Console.WriteLine("Successfully added.");
 
         }
-        public void getEnhancementInfo(Enhancement ticket, string file){
+        public static void getEnhancementInfo(Enhancement ticket, string file){
             StreamWriter sw = new StreamWriter(file, true);
             Console.WriteLine("Enter name of software");
             ticket.submitter = Console.ReadLine();
