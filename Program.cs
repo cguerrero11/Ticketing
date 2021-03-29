@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Ticketing
 {
@@ -8,6 +9,8 @@ namespace Ticketing
         static void Main(string[] args)
         {
             string file = "Ticket.csv";
+
+
             string choice;
             do
             {
@@ -17,6 +20,7 @@ namespace Ticketing
                 Console.WriteLine("4) Create an Enhancment ticket.");
                 Console.WriteLine("5) Read Task tickets.");
                 Console.WriteLine("6) Create a Task ticket.");
+                Console.WriteLine("7) Search tickets.");
                 Console.WriteLine("Enter any other key to exit.");
                 choice = Console.ReadLine();
 
@@ -27,6 +31,8 @@ namespace Ticketing
                     } 
                     else if (choice == "5"){
                         file = "Task.csv";
+                    } else if (choice == "1"){
+                        file = "Ticket.csv";
                     }
                     try {
                     StreamReader sr = new StreamReader(file);
@@ -81,9 +87,10 @@ namespace Ticketing
                                 ticket.watchers.Add(input);
                             }
                         } while (input != "done");
+
                         if (ticket.watchers.Count == 0)
                         {
-                            ticket.watchers.Add("(no genres listed)");
+                            ticket.watchers.Add("(no watchers)");
                         }
 
                         if(choice == "2"){
@@ -107,8 +114,46 @@ namespace Ticketing
 
                     
                     Console.WriteLine();
+                } else if(choice == "7"){
+                    //search tickets by status, priority, and submitter
+                    //search all ticket, task, and enhancement
+                    BugDefectFile ticketFile = new BugDefectFile(file);
+                    TaskFile taskFile = new TaskFile("Task.csv");
+                    EnhancementFile enhancementFile = new EnhancementFile("Enhancements.csv");
+
+                    Console.WriteLine("1) Search by Status");
+                    Console.WriteLine("2) Search by Priority");
+                    Console.WriteLine("3) Search by Submitter");
+                    string input = Console.ReadLine().ToString();
+
+                    if(input == "1"){
+                        //status
+                        Console.Write("Search by Status: ");
+                        input = Console.ReadLine();
+
+                        var searchCount = ticketFile.Tickets.Where(t => t.status.Contains(input)).Count() + taskFile.Tickets.Where(t => t.status.Contains(input)).Count() + enhancementFile.Tickets.Where(t => t.status.Contains(input)).Count();                  
+                        Console.Write(searchCount + " Tickets matching.");
+
+                        var ticketSearch = ticketFile.Tickets.Where(t => t.status.Contains(input)).Select(m => m.summary);
+                        foreach(string t in ticketSearch)
+                        {
+                            Console.WriteLine($"  {t}");
+                        }
+
+                    } else if (input == "2"){
+                        //priority
+                        Console.Write("Search by Priorty: ");
+                        input = Console.ReadLine();
+
+                    } else if (input == "3"){
+                        //submitter
+                        Console.Write("Search Submitters: ");
+                        input = Console.ReadLine();
+
+                    }
+
                 }
-            } while (choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5" || choice == "6");
+            } while (choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5" || choice == "6" || choice == "7");
         }
         public static void getTicketInfo(BugDefect ticket, string file){
             StreamWriter sw = new StreamWriter(file, true);
